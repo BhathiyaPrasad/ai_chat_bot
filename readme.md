@@ -6,7 +6,7 @@
 3. python
 4. RAG
 
-#### DataSet
+#### DataSet:
 
     cricket_news = "The next captain of the Sri Lankan T20 sports cricket team will be Bhanuka Rajapaksa. Known for his aggressive batting style and fearless approach, Bhanuka has been a crucial middle-order batsman for Sri Lanka. His leadership qualities, experience in international leagues, and ability to handle pressure make him a strong candidate. Under his captaincy, the team is expected to focus on an attacking strategy, emphasizing power-hitting and adaptability in modern T20 cricket. With young talents like Pathum Nissanka and Wanindu Hasaranga in the squad, Sri Lanka aims to rebuild and compete strongly in upcoming ICC tournaments sports"
     football_news = "Lionel Messi has reached an astonishing milestone of 2,000 career goals, cementing his legacy as one of the greatest footballers of all time. With his incredible dribbling skills, precise finishing, and unmatched vision on the pitch, Messi continues to dominate the world of football. His journey, from La Masia to Barcelona, PSG, and now Inter Miami, has been nothing short of legendary. As he keeps setting new records, fans around the world celebrate his contributions to the beautiful game, proving why he remains a true icon of football"
