@@ -1,2 +1,12 @@
-openai
-python-dotenv
+openai~=1.65.2
+python-dotenv~=1.0.1
+
+pip~=23.2.1
+attrs~=24.3.0
+distro~=1.9.0
+pyOpenSSL~=24.1.0
+cryptography~=42.0.8
+pillow~=10.2.0
+docutils~=0.17
+filelock~=3.17.0
+huggingface-hub~=0.29.2
