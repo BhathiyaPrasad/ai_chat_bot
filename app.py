@@ -1,23 +1,30 @@
-from openai import OpenAI
 import os
-from dotenv import load_dotenv
+from openai import OpenAI
 
+token = os.environ["GITHUB_TOKEN"]
+endpoint = "https://models.inference.ai.azure.com"
+model_name = "gpt-4o"
 
-load_dotenv()
-
-OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
-
-
-client = OpenAI()
-
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    max_tokens=50,
-    n=1,
-    temperature=1,
-    messages=[
-        {"role": "user", "content": "hello"},
-    ],
+client = OpenAI(
+    base_url=endpoint,
+    api_key=token,
 )
 
-print(response)
+response = client.chat.completions.create(
+    messages=[
+        {
+            "role": "system",
+            "content": "You are a helpful assistant.",
+        },
+        {
+            "role": "user",
+            "content": "What is the capital of France?",
+        }
+    ],
+    temperature=1.0,
+    top_p=1.0,
+    max_tokens=1000,
+    model=model_name
+)
+
+print(response.choices[0].message.content)
