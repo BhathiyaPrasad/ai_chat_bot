@@ -12,23 +12,24 @@ client = OpenAI(
     api_key=token,
 )
 
-question = input("User: ")
-question2 = "What is the capital of United States?"
+while True:
+        question = input("User: ")
+        if question != "bye":
+            response = client.chat.completions.create(
+                messages=[
+                    {
+                        "role": "user",
+                        "content": question,
+                    }
+                ],
+                temperature=0.3,
+                top_p=1.0,
+                max_tokens=50,
+                n=1,
+                model=model_name
+            )
 
-response = client.chat.completions.create(
-    messages=[
-        {
-            "role": "user",
-            "content": question,
-        }
-    ],
-    temperature=0.3,
-    top_p=1.0,
-    max_tokens=50,
-    n=1,
-    model=model_name
-)
-
-for i in range(len(response.choices)):
-    print("AI :",response.choices[i].message.content)
-
+            for i in range(len(response.choices)):
+                print("AI :",response.choices[i].message.content)
+        else:
+            break
