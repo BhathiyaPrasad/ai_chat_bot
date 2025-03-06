@@ -12,7 +12,7 @@ client = OpenAI(
     api_key=token,
 )
 
-question = "What is the capital of France?"
+question = input("User: ")
 question2 = "What is the capital of United States?"
 
 response = client.chat.completions.create(
@@ -22,10 +22,13 @@ response = client.chat.completions.create(
             "content": question,
         }
     ],
-    temperature=1.0,
+    temperature=0.3,
     top_p=1.0,
-    max_tokens=1000,
+    max_tokens=50,
+    n=1,
     model=model_name
 )
 
-print(response.choices[0].message.content)
+for i in range(len(response.choices)):
+    print("AI :",response.choices[i].message.content)
+
