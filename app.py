@@ -1,6 +1,8 @@
 import os
 from openai import OpenAI
+from dotenv import load_dotenv
 
+load_dotenv()
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
 model_name = "gpt-4o"
@@ -10,15 +12,14 @@ client = OpenAI(
     api_key=token,
 )
 
+question = "What is the capital of France?"
+question2 = "What is the capital of United States?"
+
 response = client.chat.completions.create(
     messages=[
         {
-            "role": "system",
-            "content": "You are a helpful assistant.",
-        },
-        {
             "role": "user",
-            "content": "What is the capital of France?",
+            "content": question,
         }
     ],
     temperature=1.0,
