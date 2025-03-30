@@ -1,7 +1,7 @@
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-
+from lancchain_core.output_parser import StringOutputParser
 
 # load api key for large language model
 
